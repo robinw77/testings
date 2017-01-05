@@ -33,8 +33,16 @@ then
   diffcount=$( wc -l < $earl.diffs )
   echo Differences found: $diffcount
 
-  sed -i '47s/^/ <span class="diffC">/' $earl.old 
-  sed -i '47s/$/ <\/span>/' $earl.old
+  sed -i '47s/^/ <span class="diffC">/' $earl.new 
+  sed -i '47s/$/ <\/span>/' $earl.new
+  sed -i '84s/^/ <span class="diffA">/' $earl.new
+  sed -i '84s/$/ <\/span>/' $earl.new
+  sed -i '85s/^/ <span class="diffA">/' $earl.new
+  sed -i '85s/$/ <\/span>/' $earl.new
+  sed -i '86s/^/ <span class="diffA">/' $earl.new
+  sed -i '86s/$/ <\/span>/' $earl.new
+  sed -i '87s/^/ <span class="diffA">/' $earl.new
+  sed -i '87s/$/ <\/span>/' $earl.new
 
   perl -00pe 's/^/<p>\n/' $earl.old >$earl.old.tmp
   perl -00pe 's/$/<\/p>\n/' $earl.old.tmp >$earl.old.html
